@@ -6,5 +6,5 @@ import matplotlib.pyplot as plt
 source = np.array(Image.open('Pictures/orca.jpg'))
 nb_row_s,nb_col_s,nb_ch_s = source.shape
 
-plt.imshow(s)
+plt.imshow(source)
 plt.show()
