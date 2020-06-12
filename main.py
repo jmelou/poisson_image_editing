@@ -23,3 +23,10 @@ y_min = min(y_poly)
 y_max = max(y_poly)
 x_min = min(x_poly)
 x_max = max(x_poly)
+
+# Read target image :
+target = np.array(Image.open('Pictures/mountains.jpg'))
+nb_row_t,nb_col_t,nb_ch_t = target.shape
+
+plt.imshow(target)
+plt.axis('off')
