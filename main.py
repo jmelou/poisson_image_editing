@@ -34,4 +34,4 @@ plt.axis('off')
 
 # Select rectangle in target
 print('Select opposite corners of the target zone');
-[x_r,y_r] = plt.ginput(2);
+[p1,p2] = plt.ginput(2);
