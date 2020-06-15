@@ -18,10 +18,10 @@ x_poly = np.around(poly.x)
 y_poly = np.around(poly.y) 
 
 # Bounding rectangle of poly
-y_min = min(y_poly)
-y_max = max(y_poly)
-x_min = min(x_poly)
-x_max = max(x_poly)
+i_p_min = int(min(y_poly))
+i_p_max = int(max(y_poly))
+j_p_min = int(min(x_poly))
+j_p_max = int(max(x_poly))
 
 # Read target image :
 target = np.array(Image.open('Pictures/mountains.jpg'))
@@ -34,13 +34,13 @@ plt.axis('off')
 # Select rectangle in target
 print('Select opposite corners of the target zone');
 [p1,p2] = plt.ginput(2);
-x_min_r = max(min(p1[0], p2[0]), 0)
-x_max_r = min(max(p1[0], p2[0]), nb_col_t)
-y_min_r = max(min(p1[1], p2[1]), 0)
-y_max_r = min(max(p1[1], p2[1]), nb_row_t)
+j_r_min = int(max(min(p1[0], p2[0]), 0))
+j_r_max = int(min(max(p1[0], p2[0]), nb_col_t))
+i_r_min = int(max(min(p1[1], p2[1]), 0))
+i_r_max = int(min(max(p1[1], p2[1]), nb_row_t))
 
-plt.plot([x_min_r, x_min_r], [y_min_r, y_max_r], color='red')
-plt.plot([x_min_r, x_max_r], [y_min_r, y_min_r], color='red')
-plt.plot([x_max_r, x_max_r], [y_min_r, y_max_r], color='red')
-plt.plot([x_min_r, x_max_r], [y_max_r, y_max_r], color='red')
+plt.plot([j_r_min, j_r_min], [i_r_min, i_r_max], color='red')
+plt.plot([j_r_min, j_r_max], [i_r_min, i_r_min], color='red')
+plt.plot([j_r_max, j_r_max], [i_r_min, i_r_max], color='red')
+plt.plot([j_r_min, j_r_max], [i_r_max, i_r_max], color='red')
 plt.show()
