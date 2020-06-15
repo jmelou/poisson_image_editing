@@ -35,3 +35,13 @@ plt.axis('off')
 # Select rectangle in target
 print('Select opposite corners of the target zone');
 [p1,p2] = plt.ginput(2);
+x_min_r = max(min(p1[0], p2[0]), 0)
+x_max_r = min(max(p1[0], p2[0]), nb_col_t)
+y_min_r = max(min(p1[1], p2[1]), 0)
+y_max_r = min(max(p1[1], p2[1]), nb_row_t)
+
+plt.plot([x_min_r, x_min_r], [y_min_r, y_max_r], color='red')
+plt.plot([x_min_r, x_max_r], [y_min_r, y_min_r], color='red')
+plt.plot([x_max_r, x_max_r], [y_min_r, y_max_r], color='red')
+plt.plot([x_min_r, x_max_r], [y_max_r, y_max_r], color='red')
+plt.show()
