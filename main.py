@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 source = np.array(Image.open('Pictures/orca.jpg'))
 nb_row_s,nb_col_s,nb_ch_s = source.shape
 
-plt.figure()
+s = plt.figure()
 plt.imshow(source)
 plt.axis('off')
 
@@ -27,7 +27,7 @@ x_max = max(x_poly)
 target = np.array(Image.open('Pictures/mountains.jpg'))
 nb_row_t,nb_col_t,nb_ch_t = target.shape
 
-plt.figure()
+t = plt.figure()
 plt.imshow(target)
 plt.axis('off')
 
