@@ -4,6 +4,8 @@ from roipoly import RoiPoly
 import numpy as np
 import matplotlib.pyplot as plt
 
+from skimage.transform import rescale, resize
+
 # Read source image :
 source = np.array(Image.open('Pictures/orca.jpg'))
 nb_row_s,nb_col_s,nb_ch_s = source.shape
@@ -54,4 +56,10 @@ r = target[i_r_min:i_r_max,j_r_min:j_r_max,:]
 # Select the sub-matrices in the bounding box of the polygon :
 source = source[i_p_min:i_p_max,j_p_min:j_p_max,:];
 polygonMask = polygonMask[i_p_min:i_p_max,j_p_min:j_p_max];
+
+# Resize s and p :
+nb_row_r,nb_col_r,nb_ch_r = r.shape
+source = resize(source, r.shape, anti_aliasing=True, mode='constant')
+polygonMask = resize(polygonMask, r.shape, anti_aliasing=True, mode='constant')
+
 plt.show()
