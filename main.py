@@ -13,7 +13,6 @@ plt.imshow(source)
 plt.axis('off')
 
 # Select and display polygon in source picture
-# Axes : x to the right, y to the top !
 poly = RoiPoly(color='r')
 x_poly = np.around(poly.x) 
 y_poly = np.around(poly.y) 
