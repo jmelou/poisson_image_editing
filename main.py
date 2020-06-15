@@ -31,7 +31,7 @@ t = plt.figure()
 plt.imshow(target)
 plt.axis('off')
 
-# Select rectangle in target
+# Select rectangle r in target
 print('Select opposite corners of the target zone');
 [p1,p2] = plt.ginput(2);
 j_r_min = int(max(min(p1[0], p2[0]), 0))
