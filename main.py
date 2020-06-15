@@ -48,4 +48,10 @@ plt.plot([j_r_max, j_r_max], [i_r_min, i_r_max], color='red')
 plt.plot([j_r_min, j_r_max], [i_r_max, i_r_max], color='red')
 plt.draw()
 
+# Target sub-matrix corresponding to the rectangle r :
+r = target[i_r_min:i_r_max,j_r_min:j_r_max,:]
+
+# Select the sub-matrices in the bounding box of the polygon :
+source = source[i_p_min:i_p_max,j_p_min:j_p_max,:];
+polygonMask = polygonMask[i_p_min:i_p_max,j_p_min:j_p_max];
 plt.show()
