@@ -43,4 +43,6 @@ plt.plot([j_r_min, j_r_min], [i_r_min, i_r_max], color='red')
 plt.plot([j_r_min, j_r_max], [i_r_min, i_r_min], color='red')
 plt.plot([j_r_max, j_r_max], [i_r_min, i_r_max], color='red')
 plt.plot([j_r_min, j_r_max], [i_r_max, i_r_max], color='red')
+plt.draw()
+
 plt.show()
