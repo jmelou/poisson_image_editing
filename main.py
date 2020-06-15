@@ -14,6 +14,9 @@ plt.axis('off')
 
 # Select and display polygon in source picture
 poly = RoiPoly(color='r')
+source_1c = source[:,:,0]
+polygonMask = poly.get_mask(source_1c)
+
 x_poly = np.around(poly.x) 
 y_poly = np.around(poly.y) 
 
